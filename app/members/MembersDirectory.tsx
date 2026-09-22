@@ -5,10 +5,13 @@ import { memberGroups } from "./members-data";
 import MemberAccordion from "./MemberAccordion";
 
 export default function MembersDirectory() {
-  // Multi-open accordion state: group 01 ('senior-associates') open by default
+  // Multi-open accordion state: all sections closed by default initially
   const [openGroupIds, setOpenGroupIds] = useState<Set<string>>(
-    () => new Set(["senior-associates"])
+    () => new Set()
   );
+
+  // Track open session generation per group to reset card flip state on reopen
+  const [groupSessions, setGroupSessions] = useState<Record<string, number>>({});
 
   const toggleGroup = (groupId: string) => {
     setOpenGroupIds((prev) => {
@@ -17,6 +20,11 @@ export default function MembersDirectory() {
         next.delete(groupId);
       } else {
         next.add(groupId);
+        // Increment session key when opening so cards reset to front face
+        setGroupSessions((s) => ({
+          ...s,
+          [groupId]: (s[groupId] || 0) + 1,
+        }));
       }
       return next;
     });
@@ -25,7 +33,7 @@ export default function MembersDirectory() {
   return (
     <section
       id="members-directory"
-      className="relative z-10 w-full py-[clamp(3rem,6vh,5rem)]"
+      className="relative z-10 w-full py-[clamp(3rem,6vh,5rem)] [overflow-anchor:none]"
       aria-labelledby="directory-heading"
     >
       {/* Section Header / Eyebrow */}
@@ -39,12 +47,13 @@ export default function MembersDirectory() {
       </div>
 
       {/* Directory Accordion Rows */}
-      <div className="border-t border-white/10">
+      <div className="border-t border-white/10 [overflow-anchor:none]">
         {memberGroups.map((group) => (
           <MemberAccordion
             key={group.id}
             group={group}
             isOpen={openGroupIds.has(group.id)}
+            sessionKey={groupSessions[group.id] || 0}
             onToggle={() => toggleGroup(group.id)}
           />
         ))}

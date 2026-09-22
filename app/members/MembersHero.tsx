@@ -3,7 +3,7 @@ import { ArrowDown } from "lucide-react";
 export default function MembersHero() {
   return (
     <section
-      className="relative z-10 flex min-h-[calc(100vh-6rem)] w-full flex-col justify-between pt-[clamp(6rem,12vh,9rem)] pb-[clamp(2rem,5vh,4rem)]"
+      className="relative z-10 flex min-h-[calc(100vh-5rem)] w-full flex-col justify-between pt-[clamp(6.5rem,14vh,9.5rem)] pb-[clamp(2rem,5vh,3.5rem)]"
       aria-label="Members Hero"
     >
       <style>{`
@@ -30,76 +30,63 @@ export default function MembersHero() {
         }
       `}</style>
 
-      {/* Main Hero Header Area */}
-      <div className="flex w-full flex-col justify-between gap-8 md:flex-row md:items-start lg:gap-16">
-        {/* Left Column: Eyebrow + Heading + Description */}
+      {/* Main Hero Header Area - Centered vertically within the hero section */}
+      <div className="my-auto flex w-full flex-col justify-between gap-8 py-4 md:flex-row md:items-start lg:gap-16">
+        {/* Left Column: Heading + Description */}
         <div className="flex-1">
-          {/* Eyebrow */}
-          <div
-            className="hero-reveal mb-4 sm:mb-6"
-            style={{ animationDelay: "50ms" }}
-          >
-            <span className="font-mono text-xs sm:text-sm font-semibold uppercase tracking-[0.25em] text-ces-glint-blue">
-              Computer Engineers&apos; Society
-            </span>
-          </div>
-
-          {/* Heading */}
+          {/* Heading: Exactly "Meet the People Behind CES" (no period) */}
           <h1
             className="hero-reveal text-[clamp(2.5rem,5.5vw,5rem)] font-medium leading-[1.05] tracking-tight text-ces-text-primary"
-            style={{ animationDelay: "150ms" }}
+            style={{ animationDelay: "100ms" }}
           >
             Meet the People
             <br />
-            Behind CS.
+            Behind CES
           </h1>
 
           {/* Sub-paragraph */}
           <p
             className="hero-reveal mt-6 max-w-xl text-base sm:text-lg leading-relaxed text-ces-text-secondary"
-            style={{ animationDelay: "280ms" }}
+            style={{ animationDelay: "220ms" }}
           >
             The builders, problem-solvers, mentors, and creators shaping the
             Computer Engineers Society.
           </p>
         </div>
 
-        {/* Right Column: Pills & Category Indicator */}
+        {/* Right Column: BUILD / LEARN / CREATE Pills with individual subtle glows */}
         <div
           className="hero-reveal flex flex-col items-start md:items-end gap-3 pt-2 md:pt-4"
-          style={{ animationDelay: "380ms" }}
+          style={{ animationDelay: "320ms" }}
         >
-          {/* Pills: BUILD / LEARN / CREATE */}
           <div className="flex flex-wrap items-center gap-2">
-            <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 font-mono text-[11px] sm:text-xs tracking-wider text-ces-text-secondary backdrop-blur-sm">
+            {/* BUILD -> warm CES-gold/yellow glow */}
+            <span className="cursor-default select-none rounded-full border border-white/10 bg-white/[0.04] px-3.5 py-1 font-mono text-[11px] sm:text-xs tracking-wider text-ces-text-secondary backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-ces-gold/50 hover:text-ces-gold hover:shadow-[0_0_12px_rgba(201,162,74,0.35)] motion-reduce:transform-none motion-reduce:transition-none">
               BUILD
             </span>
-            <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 font-mono text-[11px] sm:text-xs tracking-wider text-ces-text-secondary backdrop-blur-sm">
+            {/* LEARN -> soft pink/purple glow */}
+            <span className="cursor-default select-none rounded-full border border-white/10 bg-white/[0.04] px-3.5 py-1 font-mono text-[11px] sm:text-xs tracking-wider text-ces-text-secondary backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-purple-400/50 hover:text-purple-300 hover:shadow-[0_0_12px_rgba(192,132,252,0.35)] motion-reduce:transform-none motion-reduce:transition-none">
               LEARN
             </span>
-            <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 font-mono text-[11px] sm:text-xs tracking-wider text-ces-text-secondary backdrop-blur-sm">
+            {/* CREATE -> soft green/blue glow */}
+            <span className="cursor-default select-none rounded-full border border-white/10 bg-white/[0.04] px-3.5 py-1 font-mono text-[11px] sm:text-xs tracking-wider text-ces-text-secondary backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-400/50 hover:text-emerald-300 hover:shadow-[0_0_12px_rgba(52,211,153,0.35)] motion-reduce:transform-none motion-reduce:transition-none">
               CREATE
             </span>
           </div>
-
-          {/* Micro-label */}
-          <span className="font-mono text-[11px] sm:text-xs tracking-[0.2em] text-ces-text-muted">
-            01 / PEOPLE / COMMUNITY
-          </span>
         </div>
       </div>
 
       {/* Bottom Row: Scroll to meet the team */}
       <div
-        className="hero-reveal mt-12 sm:mt-16 flex items-center"
-        style={{ animationDelay: "500ms" }}
+        className="hero-reveal mt-8 sm:mt-12 flex items-center"
+        style={{ animationDelay: "420ms" }}
       >
         <a
           href="#community-intro"
-          className="group inline-flex items-center gap-2 text-sm text-ces-text-muted transition-colors hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-ces-glint-blue/60"
+          className="group inline-flex items-center gap-2 text-sm text-ces-text-muted transition-colors hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-ces-gold/60"
         >
           <span>Scroll to meet the team</span>
-          <ArrowDown className="h-4 w-4 animate-bounce text-ces-glint-blue transition-transform group-hover:translate-y-1 motion-reduce:animate-none" />
+          <ArrowDown className="h-4 w-4 animate-bounce text-ces-gold transition-transform group-hover:translate-y-1 motion-reduce:animate-none" />
         </a>
       </div>
     </section>
