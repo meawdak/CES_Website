@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import MembersHero from "./MembersHero";
-import MembersIntro from "./MembersIntro";
 import MembersDirectory from "./MembersDirectory";
 
 export const metadata: Metadata = {
@@ -13,7 +12,6 @@ export default function MembersPage() {
   return (
     <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <MembersHero />
-      <MembersIntro />
       <MembersDirectory />
     </div>
   );

@@ -50,7 +50,10 @@ export default function MembersHero() {
             style={{ animationDelay: "220ms" }}
           >
             The builders, problem-solvers, mentors, and creators shaping the
-            Computer Engineers Society.
+            Computer Engineers Society. Different skills. Different
+            perspectives. One community—senior members, associates, junior
+            associates, and alumni mentors who learn, build, collaborate, and
+            push technology forward together.
           </p>
         </div>
 
@@ -82,7 +85,7 @@ export default function MembersHero() {
         style={{ animationDelay: "420ms" }}
       >
         <a
-          href="#community-intro"
+          href="#members-directory"
           className="group inline-flex items-center gap-2 text-sm text-ces-text-muted transition-colors hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-ces-gold/60"
         >
           <span>Scroll to meet the team</span>
