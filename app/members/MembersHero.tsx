@@ -49,11 +49,9 @@ export default function MembersHero() {
             className="hero-reveal mt-6 max-w-xl text-base sm:text-lg leading-relaxed text-ces-text-secondary"
             style={{ animationDelay: "220ms" }}
           >
-            The builders, problem-solvers, mentors, and creators shaping the
-            Computer Engineers Society. Different skills. Different
-            perspectives. One community—senior members, associates, junior
-            associates, and alumni mentors who learn, build, collaborate, and
-            push technology forward together.
+            The faces behind the work.
+            <br />
+            Different skills. Different perspectives. One community.
           </p>
         </div>
 
